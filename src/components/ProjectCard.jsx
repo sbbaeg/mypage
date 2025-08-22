@@ -1,7 +1,5 @@
-
 import React from 'react';
 
-// 각 프로젝트의 정보를 받아 카드 형태로 표시하는 컴포넌트
 function ProjectCard({ project }) {
   if (!project.url) {
     return (

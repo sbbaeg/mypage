@@ -1,38 +1,118 @@
-#root {
-  max-width: 1280px;
+/* General Body and Container Styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* More readable font */
+  background-color: #f4f7f6; /* Light background */
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 0 20px; /* Add horizontal padding */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure footer stays at bottom */
+}
+
+/* Header Styles */
+.header {
+  background-color: #282c34; /* Dark header background */
+  color: #fff;
+  padding: 1.5rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.header nav li {
+  margin-left: 20px;
+}
+
+.header nav a {
+  color: #a0a0a0;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.header nav a:hover {
+  color: #61dafb; /* Accent color */
+}
+
+/* Main Content Styles */
+.main-content {
+  flex-grow: 1; /* Occupy remaining space */
+  padding: 2rem 0;
+}
+
+.intro-section, .projects-section {
+  background-color: #fff;
   padding: 2rem;
-  font-family: sans-serif;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
 }
 
-h1 {
+.intro-section h2, .projects-section h2 {
   text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-}
-
-p {
-  text-align: center;
-  color: #666;
+  font-size: 2rem;
+  color: #282c34;
   margin-top: 0;
+  margin-bottom: 1.5rem;
 }
 
+.intro-section p {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 1.5rem auto;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* Project Card Container */
 .projects-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1.5rem;
-  margin-top: 3rem;
+  margin-top: 1.5rem;
 }
 
+/* Project Card Styles */
 .card {
-  border: 1px solid #eaeaea;
-  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
   padding: 1.5rem;
   text-align: left;
   text-decoration: none;
   color: inherit;
-  background-color: #fafafa;
+  background-color: #fff;
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  justify-content: space-between;
+  min-height: 180px; /* Ensure consistent card height */
 }
 
 .card:hover {
@@ -48,14 +128,15 @@ p {
 
 .card h3 {
   margin: 0 0 0.5rem;
-  font-size: 1.25rem;
+  font-size: 1.4rem;
+  color: #282c34;
 }
 
 .card p {
   margin: 0 0 1rem;
   font-size: 1rem;
   text-align: left;
-  color: #0070f3;
+  color: #0070f3; /* Link color */
 }
 
 .card small {
@@ -65,10 +146,22 @@ p {
 }
 
 .error {
-  color: #ff0000;
-  background-color: #ffebeb;
-  border: 1px solid #ff0000;
+  color: #d9534f;
+  background-color: #f2dede;
+  border: 1px solid #ebccd1;
   padding: 1rem;
   border-radius: 8px;
   text-align: center;
+  margin-top: 1rem;
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #282c34;
+  color: #a0a0a0;
+  padding: 1.5rem 0;
+  text-align: center;
+  font-size: 0.9rem;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.05);
+  margin-top: auto; /* Push footer to bottom */
 }
