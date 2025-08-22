@@ -1,24 +1,25 @@
-/* General Body and Container Styles */
+/* General Body and Container Styles (PC-First) */
 body {
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* More readable font */
-  background-color: #f4f7f6; /* Light background */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f7f6;
   color: #333;
   line-height: 1.6;
+  font-size: 16px; /* Base font size for PC */
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px; /* Add horizontal padding */
+  padding: 0 20px;
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Ensure footer stays at bottom */
+  min-height: 100vh;
 }
 
 /* Header Styles */
 .header {
-  background-color: #282c34; /* Dark header background */
+  background-color: #282c34;
   color: #fff;
   padding: 1.5rem 0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -35,7 +36,7 @@ body {
 
 .header h1 {
   margin: 0;
-  font-size: 1.8rem;
+  font-size: 2rem; /* Slightly larger for PC header */
   font-weight: 600;
 }
 
@@ -47,7 +48,7 @@ body {
 }
 
 .header nav li {
-  margin-left: 20px;
+  margin-left: 25px; /* More spacing for PC nav */
 }
 
 .header nav a {
@@ -61,23 +62,23 @@ body {
   color: #61dafb; /* Accent color */
 }
 
-/* Main Content Styles */
+/* Main Content Sections */
 .main-content {
-  flex-grow: 1; /* Occupy remaining space */
-  padding: 2rem 0;
+  flex-grow: 1;
+  padding: 3rem 0;
 }
 
 .intro-section, .projects-section {
   background-color: #fff;
-  padding: 2rem;
+  padding: 2.5rem;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
 
 .intro-section h2, .projects-section h2 {
   text-align: center;
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: #282c34;
   margin-top: 0;
   margin-bottom: 1.5rem;
@@ -87,32 +88,32 @@ body {
   text-align: center;
   max-width: 800px;
   margin: 0 auto 1.5rem auto;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   color: #555;
 }
 
 /* Project Card Container */
 .projects-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1.5rem;
-  margin-top: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); /* Slightly wider min-width for PC cards */
+  gap: 1.8rem;
+  margin-top: 2rem;
 }
 
 /* Project Card Styles */
 .card {
   border: 1px solid #e0e0e0;
   border-radius: 8px;
-  padding: 1.5rem;
+  padding: 1.8rem;
   text-align: left;
   text-decoration: none;
   color: inherit;
   background-color: #fff;
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   display: flex;
-  flex-direction: column; /* Stack content vertically */
+  flex-direction: column;
   justify-content: space-between;
-  min-height: 180px; /* Ensure consistent card height */
+  min-height: 200px;
 }
 
 .card:hover {
@@ -127,24 +128,25 @@ body {
 }
 
 .card h3 {
-  margin: 0 0 0.5rem;
-  font-size: 1.4rem;
+  margin: 0 0 0.6rem;
+  font-size: 1.5rem;
   color: #282c34;
 }
 
 .card p {
-  margin: 0 0 1rem;
-  font-size: 1rem;
+  margin: 0 0 1.2rem;
+  font-size: 1.05rem;
   text-align: left;
-  color: #0070f3; /* Link color */
+  color: #0070f3;
 }
 
 .card small {
-  font-size: 0.875rem;
+  font-size: 0.9rem;
   color: #888;
   text-transform: capitalize;
 }
 
+/* Error Message Styles */
 .error {
   color: #d9534f;
   background-color: #f2dede;
@@ -159,9 +161,82 @@ body {
 .footer {
   background-color: #282c34;
   color: #a0a0a0;
-  padding: 1.5rem 0;
+  padding: 2rem 0;
   text-align: center;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.05);
-  margin-top: auto; /* Push footer to bottom */
+  margin-top: auto;
+}
+
+/* --- Media Queries for Mobile Responsiveness --- */
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+
+  .container {
+    padding: 0 15px;
+  }
+
+  .header-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .header h1 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+  }
+
+  .header nav ul {
+    flex-direction: column;
+  }
+
+  .header nav li {
+    margin: 5px 0;
+  }
+
+  .main-content {
+    padding: 2rem 0;
+  }
+
+  .intro-section, .projects-section {
+    padding: 1.8rem;
+    margin-bottom: 1.8rem;
+  }
+
+  .intro-section h2, .projects-section h2 {
+    font-size: 2.2rem;
+  }
+
+  .intro-section p {
+    font-size: 1rem;
+  }
+
+  .projects-container {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .card {
+    padding: 1.5rem;
+    min-height: auto;
+  }
+
+  .card h3 {
+    font-size: 1.3rem;
+  }
+
+  .card p {
+    font-size: 0.95rem;
+  }
+
+  .card small {
+    font-size: 0.85rem;
+  }
+
+  .footer {
+    padding: 1.5rem 0;
+    font-size: 0.85rem;
+  }
 }
